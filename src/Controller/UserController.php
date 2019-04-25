@@ -19,13 +19,14 @@ class UserController extends FOSRestController
 {
     /**
      * Retrieve A Collection Of User Resource
-     * @Rest\Get("/admin/users/{filter}")
+     * @Rest\Get("/admin/users")
      * @return Response
      */
-    public function getUsersAction($filter = null)
+    public function getUsersAction()
     {
         $entityRepo = $this->getDoctrine()->getRepository(User::class);
-        $users = is_null($filter) ? $entityRepo->findAll() : $entityRepo->findOneBy($filter);
+        // $users = is_null($filter) ? $entityRepo->findAll() : $entityRepo->findOneBy($filter);
+        $users = $entityRepo->findAll();
         if ($users === null) {
             return $this->handleView($this->view('There Are No Users Exists'), Response::HTTP_NOT_FOUND);
         }
