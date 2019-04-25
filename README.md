@@ -16,6 +16,9 @@ git clone https://github.com/tald7344/symfony_restapi_testing.git
     "email": "Custom Email"
 }
 ```
+4.  **Note :**
+MovieController Class Is Just For Test, UserController Is My Work Rest Api
+
 
 ## Contributing
 
